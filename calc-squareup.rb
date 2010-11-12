@@ -15,18 +15,6 @@ class Squareup
     (plate_x + plate_y) * 2
   end
   
-  def display_report
-    puts "Using Plate Thickness: #{@plate_thickness}"
-    puts "Using Plate X: #{@plate_x}"
-    puts "Using Plate Y: #{@plate_y}"
-    puts "Perimeter is: #{perimeter}"
-    puts "Plunge Roughing Time: #{plunge_time}"
-    puts "Chamfer         Time: #{chamfer_time}"
-    puts "Setup           Time: #{setup_time}"
-    puts "---------------------------------"
-    puts "Total           Time: #{total_time}"
-  end
-  
   def plunge_time
     ( perimeter * 20 * (@plate_thickness + 0.350) ) / 50
   end
@@ -46,5 +34,19 @@ class Squareup
   end
 end
 
+#  
+
+  def display_report(pl)
+    puts "Using Plate Thickness: #{ pl.plate_thickness }"
+    puts "Using Plate X: #{pl.plate_x}"
+    puts "Using Plate Y: #{pl.plate_y}"
+    puts "Perimeter is: #{pl.perimeter}"
+    puts "Plunge Roughing Time: #{pl.plunge_time}"
+    puts "Chamfer         Time: #{pl.chamfer_time}"
+    puts "Setup           Time: #{pl.setup_time}"
+    puts "---------------------------------"
+    puts "Total           Time: #{pl.total_time}"
+  end
+  
 plate = Squareup.new(3.0, 26, 24)
-plate.display_report
+display_report(plate)
