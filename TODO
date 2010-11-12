@@ -1,0 +1,13 @@
+TODO
+
+x) move Squareup to its own file squareup.rb and require it in calc-squareup.rb
+
+x) Squareup has too many constants in the formula. They are really varriables
+which are constant now but change when different tooling is used and we get
+feedback from the machines actual cut values.
+
+x) the main script needs to get the input for the plate sizes from the user.
+If valid command line arguments are supplied then use those, else interactivly
+ask for them.
+
+
