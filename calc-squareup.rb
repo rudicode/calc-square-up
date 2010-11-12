@@ -1,6 +1,6 @@
 # Given plate dimensions, calcualtes length of time for squaring up plates
 #
-# [ Perimeter Length” x 20{passes per inch} x ( PLATE_Thickness” + 0.350” ) ] / 50{in/min}
+# [ Perimeter Length x 20{passes per inch} x ( PLATE_Thickness + 0.350 ) ] / 50{in/min}
 #
 class Squareup
   attr_accessor :plate_thickness, :plate_x, :plate_y

@@ -8,7 +8,7 @@ describe "calc-squareup" do
     @myplate.perimeter.should == 50.714
   end
   it "should calculate time taken for roughing perimeter" do
-    # formula is: [ Perimeter Length” x 20{passes per inch} x ( PLATE_Thickness” + 0.350” ) ] / 50{in/min}
+    # formula is: [ Perimeter Length x 20{passes per inch} x ( PLATE_Thickness + 0.350 ) ] / 50{in/min}
     @myplate.plunge_time.should be_close(67.9567, 0.0001)
   end
   it "should calculate time taken for chamfering" do
