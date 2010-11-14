@@ -1,6 +1,6 @@
-require "calc-squareup"
+require "squareup"
 
-describe "calc-squareup" do
+describe "squareup" do
   
   before(:each) do
     @myplate = Squareup.new(3.0,10.123,15.234)

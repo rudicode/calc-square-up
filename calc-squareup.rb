@@ -1,40 +1,5 @@
-# Given plate dimensions, calcualtes length of time for squaring up plates
-#
-# [ Perimeter Length x 20{passes per inch} x ( PLATE_Thickness + 0.350 ) ] / 50{in/min}
-#
-class Squareup
-  attr_accessor :plate_thickness, :plate_x, :plate_y
-  
-  def initialize (thick, x, y)
-    @plate_thickness = thick
-    @plate_x = x
-    @plate_y = y
-  end
-  
-  def perimeter
-    (plate_x + plate_y) * 2
-  end
-  
-  def plunge_time
-    ( perimeter * 20 * (@plate_thickness + 0.350) ) / 50
-  end
-  
-  def chamfer_time
-    # (perimeter [in] / 15 [ipm] ) * 2 [plate sides]
-    ( perimeter / 15) * 2
-  end
-  
-  def setup_time
-    # 1h per plate
-    60.0
-  end
-  
-  def total_time
-    plunge_time + chamfer_time + setup_time
-  end
-end
+require "squareup"
 
-#  
 
   def display_report(pl)
     puts "Using Plate Thickness: #{ pl.plate_thickness }"
@@ -47,6 +12,24 @@ end
     puts "---------------------------------"
     puts "Total           Time: #{pl.total_time}"
   end
-  
-plate = Squareup.new(3.0, 26, 24)
+
+# setup defailt plate size
+@plate_z = 3.0
+@plate_x = 10.123
+@plate_y = 15.234
+
+# get input from cammand line to create a new plate.
+
+if ARGV.length == 3
+  #puts "You entered the following #{ARGV.length} command line arguments:"
+  #ARGV.each do|arg|
+  #  puts "#{arg}"
+  #end
+  @plate_z = ARGV[0].to_f
+  @plate_x = ARGV[1].to_f
+  @plate_y = ARGV[2].to_f
+
+end
+plate = Squareup.new(@plate_z, @plate_x, @plate_y)
+
 display_report(plate)
