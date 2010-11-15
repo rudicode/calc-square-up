@@ -1,8 +1,7 @@
 TODO
 
-x) Squareup has too many constants in the formula. They are really variables
-which are constant now but change when different tooling is used and we get
-feedback from the machines actual cut values.
+x) Need to perform error checking on initilize method. Make sure that the in
+sizes are within correct range so that the calculation will not throw up.
 
 x) the main script needs to get the input for the plate sizes from the user.
 Command line now works, but if it is not 3 arguments then it uses defaults.
