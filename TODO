@@ -8,3 +8,4 @@ x) the main script needs to get the input for the plate sizes from the user.
 Command line now works, but if it is not 3 arguments then it uses defaults.
 need to impliment interactive input if the correct number of args not inputed.
 
+x) Add the ability to choose from different tool setups.
