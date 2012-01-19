@@ -39,5 +39,6 @@ end
   
   def total_time
     plunge_time + chamfer_time + setup_time
+    # add up all times
   end
 end
